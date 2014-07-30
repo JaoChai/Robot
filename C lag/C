@@ -1,0 +1,64 @@
+int incomingByte = 0; // ตัวแปรประเภท int 
+void setup()
+{
+Serial.begin(9600); //กำหนดความเร็วในการส่งข้อมูล
+}
+void loop()
+{	
+if (Serial.available() > 0) 
+
+{
+
+incomingByte = Serial.read();
+
+if(incomingByte == 'w'){
+
+analogWrite(5,255); 
+analogWrite(6,255);
+
+analogWrite(3,0); 
+analogWrite(4,0);
+
+} 
+
+if(incomingByte == 's'){
+
+analogWrite(5,0); 
+analogWrite(6,0);
+
+analogWrite(3,255); 
+analogWrite(4,255);
+
+}
+if(incomingByte == 'a'){
+
+analogWrite(6,0); 
+analogWrite(5,255);
+
+analogWrite(3,0); 
+analogWrite(4,0);
+
+} 
+
+if(incomingByte == 'd'){
+
+analogWrite(6,255); 
+analogWrite(5,0);
+
+analogWrite(3,0); 
+analogWrite(4,0);
+
+} 
+
+if(incomingByte == 'e'){
+
+analogWrite(6,0); 
+analogWrite(5,0);
+
+analogWrite(3,0); 
+analogWrite(4,0);
+} 
+
+}
+
+}

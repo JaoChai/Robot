@@ -1,0 +1,52 @@
+serialPort1.PortName = "COM7";
+            serialPort1.BaudRate = 96000;
+            serialPort1.Open();
+
+private void Form1_KeyUp(object sender, KeyEventArgs e)
+{
+switch (e.KeyCode)
+{
+case Keys.Down:
+serialPort1.WriteLine("e");
+label1.Text = "จอดอยู่กับที่";
+break;
+case Keys.Right:
+serialPort1.WriteLine("e");
+label1.Text = "จอดอยู่กับที่";
+break;
+case Keys.Up:
+serialPort1.WriteLine("e");
+label1.Text = "จอดอยู่กับที่";
+break;
+case Keys.Left:
+serialPort1.WriteLine("e");
+label1.Text = "จอดอยู่กับที่";//action
+break;
+}
+}
+
+private void Form1_KeyDown(object sender, KeyEventArgs e)
+{
+switch (e.KeyCode)
+{
+case Keys.Down:
+serialPort1.WriteLine("s");
+label1.Text = "ถอยหลัง ส่งคำสั่ง s";
+break;
+
+case Keys.Right:
+serialPort1.WriteLine("d");
+label1.Text = "ไปทางซ้าย ส่งคำสั่ง d";
+break;
+
+case Keys.Up:
+serialPort1.WriteLine("w");
+label1.Text = "เดินหน้าเต็มกำลัง ส่งคำสั่ง w";
+break;
+
+case Keys.Left:
+serialPort1.WriteLine("a");
+label1.Text = "ไปทางขวา ส่งคำสั่ง a";//action
+break;
+}
+}
